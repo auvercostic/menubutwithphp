@@ -292,7 +292,7 @@ function renderMenu() {
       `;
       
       const optionsDiv = document.createElement('div');
-      optionsDiv.className = 'flex flex-col gap-2 shrink-0 md:w-[220px]';
+      optionsDiv.className = 'flex flex-col gap-2 shrink-0 md:w-[280px]';
 
       item.options.forEach(opt => {
         const durationText = opt.duration ? `${opt.duration}${dict[currentLang].mins}` : '';
