@@ -1,7 +1,6 @@
-const TELEGRAM_BOT_TOKEN = '8926444206:AAGdnD71dd36n89VJQ_suTnNkkhxQC6LenI';
-const TELEGRAM_CHAT_ID = '8926267205';
-//8926267205
-//8230693625 jules (dev) 
+// ==========================================
+// 1. DATA STRUCTURE
+// ==========================================
 const menuData = [
   {
     id: 'body', categoryEn: 'Body', categoryVi: 'Chăm sóc Cơ thể',
@@ -9,60 +8,61 @@ const menuData = [
       { id: 'aroma', nameEn: 'Aroma Oil Therapy', nameVi: 'Trị liệu tinh dầu Aroma', descEn: 'Essential oil therapy to relax muscles and improve circulation.', descVi: 'Trị liệu tinh dầu giúp thư giãn cơ bắp và cải thiện tuần hoàn.', options: [{id: 'aroma-60', duration: 60, price: 500}, {id: 'aroma-90', duration: 90, price: 700}, {id: 'aroma-120', duration: 120, price: 850}] },
       { id: 'thai', nameEn: 'Thai Therapy', nameVi: 'Trị liệu kiểu Thái', descEn: 'A traditional Thailand therapy using stretching techniques.', descVi: 'Trị liệu truyền thống Thái Lan sử dụng kỹ thuật kéo giãn.', options: [{id: 'thai-60', duration: 60, price: 550}, {id: 'thai-90', duration: 90, price: 750}, {id: 'thai-120', duration: 120, price: 950}] },
       { id: 'viet', nameEn: 'Traditional Vietnamese Therapy', nameVi: 'Trị liệu truyền thống Việt Nam', descEn: 'Traditional therapy to relieve muscle tension and stimulate circulation.', descVi: 'Trị liệu truyền thống giúp giảm căng cơ và kích thích tuần hoàn.', options: [{id: 'viet-60', duration: 60, price: 600}, {id: 'viet-90', duration: 90, price: 800}, {id: 'viet-120', duration: 120, price: 1000}] },
-      { id: 'adv', nameEn: 'Advanced Body Treatment', nameVi: 'Trị liệu cơ thể chuyên sâu', descEn: 'Deep therapy for chronic muscle tension and fatigue.', descVi: 'Trị liệu sâu cho căng cơ mãn tính và mệt mỏi.', options: [{id: 'adv-60', duration: 60, price: 700}, {id: 'adv-90', duration: 90, price: 1000}, {id: 'adv-120', duration: 120, price: 1300}] },
-      { id: 'herbdex', nameEn: 'Herbal Body Detoxification Massage', nameVi: 'Trị liệu thải độc cơ thể', descEn: '', descVi: '', options: [{id: 'herbdex-60', duration: 60, price: 600}, {id: 'herbdex-90', duration: 90, price: 850}, {id: 'herbdex-120', duration: 120, price: 1100}] },
+      { id: 'adv', nameEn: 'Advanced Body Treatment', nameVi: 'Trị liệu cơ thể chuyên sâu', descEn: 'Deep therapy for chronic muscle tension and fatigue.', descVi: 'Trị liệu sâu cho căng cơ mãn tính và mệt mỏi.', options: [{id: 'adv-60', duration: 60, price: 700}, {id: 'adv-90', duration: 90, price: 1000}, {id: 'adv-120', duration: 120, price: 1300}] }
     ]
   },
   {
     id: 'neck', categoryEn: 'Back & Neck & Shoulder', categoryVi: 'Trị liệu Lưng, Cổ, Vai Gáy',
     items: [
-      { id: 'back', nameEn: 'Back Therapy', nameVi: 'Trị liệu lưng', descEn: '', descVi: '', options: [{id: 'back-30', duration: 30, price: 350}, {id: 'back-60', duration: 60, price: 650}] },
-      { id: 'hnb', nameEn: 'Head, Neck, Back & Shoulder Therapy', nameVi: 'Trị liệu đầu, cổ, lưng và vai gáy', descEn: '', descVi: '', options: [{id: 'hnb-30', duration: 30, price: 400}, {id: 'hnb-60', duration: 60, price: 700}] },
+      { id: 'back', nameEn: 'Back Therapy', nameVi: 'Trị liệu lưng', descEn: '', descVi: '', options: [{id: 'back-30', duration: 30, price: 350}, {id: 'back-60', duration: 60, price: 600}] },
+      { id: 'hnb', nameEn: 'Head, Neck, Back & Shoulder Therapy', nameVi: 'Trị liệu đầu, cổ, lưng và vai gáy', descEn: '', descVi: '', options: [{id: 'hnb-30', duration: 30, price: 350}, {id: 'hnb-60', duration: 60, price: 600}] },
       { id: 'headache', nameEn: 'Headache & Insomnia Therapy', nameVi: 'Trị liệu đau đầu và mất ngủ', descEn: '', descVi: '', options: [{id: 'headache-30', duration: 30, price: 400}, {id: 'headache-60', duration: 60, price: 700}] }
     ]
   },
   {
     id: 'stone', categoryEn: 'Hot Stone', categoryVi: 'Đá nóng',
     items: [
-      { id: 'stone-full', nameEn: 'Full Body Hot Stone', nameVi: 'Đá nóng toàn thân', descEn: '', descVi: '', options: [{id: 'stone-full-700', duration: 60, price: 700}] },
-      { id: 'stone-back', nameEn: 'Back Hot Stone', nameVi: 'Đá nóng lưng', descEn: '', descVi: '', options: [{id: 'stone-back-0', duration: null, price: 450}] },
-      { id: 'stone-foot', nameEn: 'Foot Hot Stone', nameVi: 'Đá nóng chân', descEn: '', descVi: '', options: [{id: 'stone-foot-0', duration: null, price: 350}] }
-    ] 
+      { id: 'stone-full', nameEn: 'Full Body Hot Stone', nameVi: 'Đá nóng toàn thân', descEn: '', descVi: '', options: [{id: 'stone-full-0', duration: null, price: 500}] },
+      { id: 'stone-back', nameEn: 'Back Or Foot Hot Stone', nameVi: 'Đá nóng lưng hoặc chân', descEn: '', descVi: '', options: [{id: 'stone-back-0', duration: null, price: 300}] }
+    ]
   },
   {
     id: 'handfoot', categoryEn: 'Hand & Foot', categoryVi: 'Chăm sóc Tay & Chân',
     items: [
-      { id: 'hand', nameEn: 'Soft Hand Therapy', nameVi: 'Trị liệu tay nhẹ', descEn: '', descVi: '', options: [{id: 'hand-30', duration: 30, price: 200}, {id: 'hand-60', duration: 60, price: 400}, {id: 'hand-90', duration: 90, price: 600}] },
+      { id: 'hand', nameEn: 'Hand Therapy', nameVi: 'Trị liệu tay nhẹ', descEn: '', descVi: '', options: [{id: 'hand-30', duration: 30, price: 200}, {id: 'hand-60', duration: 60, price: 400}, {id: 'hand-90', duration: 90, price: 600}] },
       { id: 'foot-oil', nameEn: 'Foot Therapy With Oil', nameVi: 'Trị liệu chân với dầu', descEn: '', descVi: '', options: [{id: 'foot-oil-30', duration: 30, price: 250}, {id: 'foot-oil-60', duration: 60, price: 450}, {id: 'foot-oil-90', duration: 90, price: 650}] },
       { id: 'foot-treat', nameEn: 'Therapeutic Foot Treatment', nameVi: 'Trị liệu chân chuyên sâu', descEn: '', descVi: '', options: [{id: 'foot-treat-30', duration: 30, price: 300}, {id: 'foot-treat-60', duration: 60, price: 550}, {id: 'foot-treat-90', duration: 90, price: 750}] },
-      { id: 'foot-total', nameEn: 'Foot Dead Skin Remover', nameVi: 'Tẩy, ủ chân', descEn: '', descVi: '', options: [{id: 'foot-total-30', duration: 30, price: 250}] },
-      { id: 'foot-total', nameEn: 'Total Foot Therapy', nameVi: 'Tẩy, ủ, chà và massage chân', descEn: 'Massage, Scrub, Wrap', descVi: '', options: [{id: 'foot-total-60', duration: 60, price: 600}] }
+      { id: 'foot-total', nameEn: 'Total Foot Therapy', nameVi: 'Trị liệu toàn bàn chân', descEn: '', descVi: '', options: [{id: 'foot-total-90', duration: 90, price: 550}] },
+      { id: 'foot-dead', nameEn: 'Foot Dead Skin Removal', nameVi: 'Tẩy ủ chân', descEn: '', descVi: '', options: [{id: 'foot-dead-30', duration: 30, price: 250}] }
     ]
   },
   {
     id: 'hair', categoryEn: 'Hair Wash', categoryVi: 'Gội đầu',
     items: [
-      { id: 'hair-wash', nameEn: 'Hair Washing', nameVi: 'Gội thường', descEn: 'Drying only, no styling', descVi: 'Gội thường, không tạo kiểu', options: [{id: 'hair-wash-30', duration: 30, price: 150}] },
-      { id: 'hair-nourish', nameEn: 'Nourishing Hair Wash', nameVi: 'Gội dưỡng sinh', descEn: '', descVi: '', options: [{id: 'hair-nourish-30', duration: 30, price: 250}, {id: 'hair-nourish-60', duration: 60, price: 450}] },
+      { id: 'hair-wash', nameEn: 'Hair Washing', nameVi: 'Gội thường', descEn: 'Drying only, no styling', descVi: 'Chỉ sấy khô, không tạo kiểu', options: [{id: 'hair-wash-30', duration: 30, price: 200}] },
+      { id: 'hair-nourish', nameEn: 'Nourishing Hair Wash', nameVi: 'Gội dưỡng sinh', descEn: '', descVi: '', options: [{id: 'hair-nourish-30', duration: 30, price: 300}, {id: 'hair-nourish-60', duration: 60, price: 450}] },
       { id: 'hair-herbal', nameEn: 'Herbal Hair Wash', nameVi: 'Gội thảo mộc', descEn: '', descVi: '', options: [{id: 'hair-herbal-60', duration: 60, price: 500}] }
     ]
   },
   {
     id: 'facial', categoryEn: 'Facial', categoryVi: 'Chăm sóc Da mặt',
     items: [
-      { id: 'face-basic', nameEn: 'Basic Facial Cleaning', nameVi: 'Chăm sóc da cơ bản', descEn: '', descVi: '', options: [{id: 'face-basic-30', duration: 30, price: 300}] },
+      { id: 'face-basic', nameEn: 'Basic Facial Cleaning', nameVi: 'Chăm sóc da cơ bản', descEn: '', descVi: '', options: [{id: 'face-basic-30', duration: 30, price: 350}] },
       { id: 'face-deep', nameEn: 'Deep Cleansing Facial With Mask', nameVi: 'Chăm sóc da chuyên sâu', descEn: '', descVi: '', options: [{id: 'face-deep-60', duration: 60, price: 500}] },
-      { id: 'face-col', nameEn: 'Collagen Facial', nameVi: 'Chăm sóc da mặt bằng collagen', descEn: '', descVi: '', options: [{id: 'face-col-75', duration: 75, price: 700}] },
-      { id: 'face-her', nameEn: 'Traditional Dao Herbal  Facial Therapy', nameVi: 'Chăm sóc da mặt bằng thảo dược của người Dao', descEn: '', descVi: '', options: [{id: 'face-col-75', duration: 75, price: 700}] }
+      { id: 'face-col', nameEn: 'Collagen Facial', nameVi: 'Chăm sóc da collagen', descEn: '', descVi: '', options: [{id: 'face-col-75', duration: 75, price: 700}] }
+    ]
+  },
+  {
+    id: 'scrub', categoryEn: 'Herbal Body Scrub & Wrap', categoryVi: 'Tẩy ủ body thảo dược',
+    items: [
+      { id: 'scrub-wrap', nameEn: 'Herbal Exfoliation And Body Wrap', nameVi: 'Tẩy ủ da body thảo dược', descEn: '', descVi: '', options: [{id: 'scrub-wrap-30', duration: 30, price: 300}, {id: 'scrub-wrap-60', duration: 60, price: 600}] }
     ]
   },
   {
     id: 'nail', categoryEn: 'Nail', categoryVi: 'Làm Nail',
     items: [
       { id: 'nail-rem', nameEn: 'Gel Removal', nameVi: 'Phá Gel', descEn: '', descVi: '', options: [{id: 'nail-rem-0', duration: null, price: 150}] },
-      { id: 'nail-man', nameEn: 'Manicure', nameVi: 'Cắt, tẩy, ủ móng tay', descEn: '', descVi: '', options: [{id: 'nail-man-0', duration: null, price: 200}] },
-      { id: 'nail-pre', nameEn: 'Predicure', nameVi: 'Cắt, tẩy, ủ móng chân', descEn: '', descVi: '', options: [{id: 'nail-pre-0', duration: null, price: 200}] },
-      { id: 'nail-prewrap', nameEn: 'Predicure and Wrap', nameVi: 'Cắt, tẩy, ủ, chà móng chân', descEn: '', descVi: '', options: [{id: 'nail-prewrap-0', duration: null, price: 300}] },
+      { id: 'nail-man', nameEn: 'Manicure Or Pedicure', nameVi: 'Chăm sóc móng tay/ móng chân', descEn: '', descVi: '', options: [{id: 'nail-man-0', duration: null, price: 200}] },
       { id: 'nail-class', nameEn: 'Classic Nail Polish', nameVi: 'Sơn thường', descEn: '', descVi: '', options: [{id: 'nail-class-0', duration: null, price: 300}] },
       { id: 'nail-gel', nameEn: 'Gel Polish', nameVi: 'Sơn Gel', descEn: '', descVi: '', options: [{id: 'nail-gel-0', duration: null, price: 400}] },
       { id: 'nail-des', nameEn: 'Nail Design', nameVi: 'Thiết kế nail', descEn: '', descVi: '', options: [{id: 'nail-des-0', duration: null, price: 800}] },
@@ -72,9 +72,9 @@ const menuData = [
   {
     id: 'wax', categoryEn: 'Waxing', categoryVi: 'Waxing (Tẩy lông)',
     items: [
-      { id: 'wax-lip', nameEn: 'Upper Lip', nameVi: 'Mép môi', descEn: '', descVi: '', options: [{id: 'wax-lip-0', duration: null, price: 200}] },
+      { id: 'wax-lip', nameEn: 'Upper Lip', nameVi: 'Mép', descEn: '', descVi: '', options: [{id: 'wax-lip-0', duration: null, price: 200}] },
       { id: 'wax-chin', nameEn: 'Chin', nameVi: 'Cằm', descEn: '', descVi: '', options: [{id: 'wax-chin-0', duration: null, price: 200}] },
-      { id: 'wax-brow', nameEn: 'Eyebrows', nameVi: 'Lông mày', descEn: '', descVi: '', options: [{id: 'wax-brow-0', duration: null, price: 200}] },
+      { id: 'wax-brow', nameEn: 'Eye Brown', nameVi: 'Lông mày', descEn: '', descVi: '', options: [{id: 'wax-brow-0', duration: null, price: 200}] },
       { id: 'wax-under', nameEn: 'Underarms', nameVi: 'Nách', descEn: '', descVi: '', options: [{id: 'wax-under-0', duration: null, price: 300}] },
       { id: 'wax-harm', nameEn: 'Half Arms', nameVi: 'Nửa tay', descEn: '', descVi: '', options: [{id: 'wax-harm-0', duration: null, price: 300}] },
       { id: 'wax-farm', nameEn: 'Full Arms', nameVi: 'Cả tay', descEn: '', descVi: '', options: [{id: 'wax-farm-0', duration: null, price: 400}] },
@@ -93,24 +93,18 @@ const menuData = [
   {
     id: 'steam', categoryEn: 'Herbal Steam', categoryVi: 'Xông/Ngâm Thảo dược',
     items: [
-      { id: 'steam-foot', nameEn: 'Foot Herbal Steambath', nameVi: 'Xông Chân thảo dược', descEn: '', descVi: '', options: [{id: 'steam-foot-0', duration: null, price: 150}] },
+      { id: 'steam-foot', nameEn: 'Foot Herbal Steambath', nameVi: 'Xông thảo dược Chân', descEn: '', descVi: '', options: [{id: 'steam-foot-0', duration: null, price: 200}] },
       { id: 'steam-body', nameEn: 'Body Herbal Steambath', nameVi: 'Xông thảo dược Toàn thân', descEn: '', descVi: '', options: [{id: 'steam-body-0', duration: null, price: 250}] },
-      { id: 'steam-foot', nameEn: 'Foot Herbal Steambath', nameVi: 'Ngâm Chân thảo dược', descEn: '', descVi: '', options: [{id: 'steam-foot-0', duration: null, price: 150}] },
-      { id: 'steam-body', nameEn: 'Body Herbal Steambath', nameVi: 'Ngâm thảo dược Toàn thân', descEn: '', descVi: '', options: [{id: 'steam-body-0', duration: null, price: 250}] },
-      { id: 'steam-bath', nameEn: 'Herbal Bath', nameVi: 'Ngâm tắm thảo dược', descEn: '', descVi: '', options: [{id: 'steam-bath-0', duration: null, price: 300}] }
-    ]
-  },
-    {
-    id: 'scrub', categoryEn: 'Body Skin Care', categoryVi: 'Tẩy da chết toàn thân',
-    items: [
-      { id: 'scrub-wrap-her', nameEn: 'Herbal Exfoliation And Body Wrap', nameVi: 'Tẩy ủ da body thảo dược', descEn: '', descVi: '', options: [{id: 'scrub-wrap-60', duration: 60, price: 500}] },
-      { id: 'scrub-wrap-salt', nameEn: 'Salt Exfoliation And Body Wrap', nameVi: 'Tẩy ủ da body bằng muối', descEn: '', descVi: '', options: [{id: 'scrub-wrap-60', duration: 60, price: 500}] },
-      { id: 'scrub-wrap-cof', nameEn: 'Coffee Exfoliation And Body Wrap', nameVi: 'Tẩy ủ da body cà phê', descEn: '', descVi: '', options: [{id: 'scrub-wrap-60', duration: 60, price: 500}] }
+      { id: 'steam-bath', nameEn: 'Herbal Bath', nameVi: 'Ngâm tắm thảo dược', descEn: '', descVi: '', options: [{id: 'steam-bath-0', duration: null, price: 250}] }
     ]
   }
 ];
 
 
+// ==========================================
+// 2. i18n
+// ==========================================
+// Cấu trúc dictionary chứa text thay thế cho toàn bộ giao diện HTML
 const dict = {
   vi: {
     pageTitle: "MOCVIA Spa - Đặt lịch",
@@ -173,6 +167,9 @@ const dict = {
 };
 
 
+// ==========================================
+// 3. KHỞI TẠO STATE & DOM ELEMENTS
+// ==========================================
 let currentLang = 'vi';
 let cart = []; 
 
@@ -180,6 +177,7 @@ const langToggleBtn = document.getElementById('lang-toggle');
 const currentLangText = document.getElementById('current-lang');
 const menuContainer = document.getElementById('menu-container');
 
+// Elements Giỏ hàng
 const cartItemsContainer = document.getElementById('cart-items');
 const emptyCartMsg = document.getElementById('empty-cart-msg');
 const cartTotalEl = document.getElementById('cart-total');
@@ -190,6 +188,7 @@ const cartContainer = document.getElementById('cart-container');
 const cartPanel = document.getElementById('cart-panel');
 const closeCartBtn = document.getElementById('close-cart-btn');
 
+// Elements Form Đặt lịch
 const checkoutModal = document.getElementById('checkout-modal');
 const cancelCheckoutBtn = document.getElementById('cancel-checkout-btn');
 const bookingForm = document.getElementById('booking-form');
@@ -200,9 +199,14 @@ const timeInput = document.getElementById('cust-time');
 const submitBtn = document.getElementById('submit-btn');
 const loadingSpinner = document.getElementById('loading-spinner');
 
+// Elements Màn hình Thank You
 const thankYouScreen = document.getElementById('thank-you-screen');
 const backHomeBtn = document.getElementById('back-home-btn');
 
+
+// ==========================================
+// 4. KHỞI CHẠY ỨNG DỤNG (BOOT)
+// ==========================================
 function init() {
   renderMenu();
   updateLanguage(currentLang);
@@ -210,6 +214,9 @@ function init() {
 }
 
 
+// ==========================================
+// 5 . MULTILANGUAGE LOGIC (i18n)
+// ==========================================
 function toggleLanguage() {
   currentLang = currentLang === 'vi' ? 'en' : 'vi';
   currentLangText.textContent = currentLang.toUpperCase();
@@ -232,6 +239,9 @@ function updateLanguage(lang) {
 }
 
 
+// ==========================================
+// 6. RENDER MENU ACCORDION
+// ==========================================
 function renderMenu() {
   menuContainer.innerHTML = ''; 
   
@@ -316,6 +326,9 @@ function renderMenu() {
 }
 
 
+// ==========================================
+// 7. CART
+// ==========================================
 window.addToCart = function(optionId, itemId) {
   let foundItem = null;
   let foundOption = null;
@@ -333,7 +346,6 @@ window.addToCart = function(optionId, itemId) {
 
   if (!foundOption) return;
 
-  // Kiểm tra giỏ hàng
   const existing = cart.find(c => c.optionId === optionId);
   if (existing) {
     existing.qty += 1;
@@ -356,9 +368,6 @@ window.addToCart = function(optionId, itemId) {
   setTimeout(() => cartBtnIcon.classList.remove('fa-bounce'), 800);
 };
 
-/**
- * Tăng/giảm số lượng món, hoặc xoá khi về 0
- */
 window.changeQty = function(optionId, delta) {
   const item = cart.find(c => c.optionId === optionId);
   if (item) {
@@ -373,7 +382,6 @@ window.changeQty = function(optionId, delta) {
 function renderCart() {
   cartItemsContainer.innerHTML = '';
   
-  // State: Trống
   if (cart.length === 0) {
     emptyCartMsg.style.display = 'block';
     checkoutBtn.disabled = true;
@@ -382,7 +390,6 @@ function renderCart() {
     return;
   }
   
-  // State: Có hàng
   emptyCartMsg.style.display = 'none';
   checkoutBtn.disabled = false;
   
@@ -407,7 +414,7 @@ function renderCart() {
         </div>
       </div>
       
-      <!-- Increase & Decrease -->
+      <!-- Cụm nút bấm (+ / -) -->
       <div class="flex items-center gap-3 bg-gray-50 border border-gray-200 rounded-full px-2 py-1 shrink-0">
         <button onclick="changeQty('${item.optionId}', -1)" class="w-6 h-6 flex items-center justify-center text-gray-500 hover:text-spa-gold hover:bg-white rounded-full transition-colors"><i class="fa-solid fa-minus text-xs"></i></button>
         <span class="text-sm font-bold w-4 text-center">${item.qty}</span>
@@ -417,18 +424,18 @@ function renderCart() {
     cartItemsContainer.appendChild(cartEl);
   });
   
-  // Bill
   cartTotalEl.textContent = total;
   floatingCartCount.textContent = totalQty;
 }
 
 
+// ==========================================
+// 8. EVENT LISTENERS
+// ==========================================
 function setupEventListeners() {
   
-  // Language Toggle Button
   langToggleBtn.addEventListener('click', toggleLanguage);
   
-  // Bật Modal Giỏ hàng trên Mobile
   floatingCartBtn.addEventListener('click', () => {
     cartContainer.classList.remove('hidden');
     setTimeout(() => {
@@ -436,7 +443,6 @@ function setupEventListeners() {
     }, 10);
   });
 
-  // Tắt Modal Giỏ hàng
   closeCartBtn.addEventListener('click', closeCartMobile);
   cartContainer.addEventListener('click', (e) => {
     if (e.target === cartContainer) closeCartMobile();
@@ -449,7 +455,6 @@ function setupEventListeners() {
     }, 300);
   }
 
-  // Checkout
   checkoutBtn.addEventListener('click', () => {
     if(window.innerWidth < 1024) closeCartMobile(); 
     checkoutModal.classList.remove('hidden');
@@ -483,11 +488,9 @@ function setupEventListeners() {
     });
   });
 
-  // Xử lý Submit Form lên Telegram
   bookingForm.addEventListener('submit', async (e) => {
-    e.preventDefault(); // No reload
+    e.preventDefault();
     
-    // Lấy dữ liệu form
     const name = document.getElementById('cust-name').value.trim();
     const phone = document.getElementById('cust-phone').value.trim();
     const isNow = document.querySelector('input[name="serve_type"]:checked').value === 'now';
@@ -503,59 +506,36 @@ function setupEventListeners() {
       return;
     }
 
-    let total = 0;
-    const cartTextArr = cart.map(item => {
-      total += (item.price * item.qty);
-      const dur = item.duration ? `(${item.duration}p)` : '';
-      return `- ${item.nameVi} ${dur}: ${item.qty} x ${item.price}k`;
-    });
-    
-    const cartText = cartTextArr.join('\n');
-
-    const msg = `
-🛎 <b>CÓ ĐƠN ĐẶT LỊCH MỚI</b> 🛎
-
-👤 <b>Khách hàng:</b> ${name}
-📞 <b>SĐT:</b> ${phone}
-📅 <b>Hình thức:</b> ${isNow ? 'Làm ngay tại quán' : 'Đặt lịch trước'}
-${!isNow ? `🗓 <b>Ngày:</b> ${date}\n⏰ <b>Giờ:</b> ${time}` : ''}
-
-📋 <b>Dịch vụ đã chọn:</b>
-${cartText}
-
-💰 <b>Tổng tiền:</b> <b>${total}k</b>
-`;
-
-    // Gọi API Telegram qua fetch
     submitBtn.disabled = true;
     loadingSpinner.classList.remove('hidden');
 
     try {
-      const response = await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
+      const response = await fetch('send-order.php', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          chat_id: TELEGRAM_CHAT_ID,
-          text: msg,
-          parse_mode: 'HTML' // Yêu cầu Telegram dịch thẻ <b> <i>
+          name,
+          phone,
+          isNow,
+          date,
+          time,
+          cart
         })
       });
 
-      if (response.ok) {
-        // Tắt Modal Form
+      const result = await response.json();
+
+      if (response.ok && result.success) {
         checkoutModal.classList.add('hidden');
         checkoutModal.classList.remove('flex', 'modal-leave', 'modal-enter');
         
-        // Thank You
         thankYouScreen.classList.remove('hidden');
         thankYouScreen.classList.add('flex', 'modal-enter');
         
-        // Dọn dẹp giỏ hàng & Form
         cart = [];
         renderCart();
         bookingForm.reset();
         
-        // Reset state của ngày giờ
         dateInput.required = false;
         timeInput.required = false;
         datetimeFields.classList.add('hidden');
@@ -573,14 +553,13 @@ ${cartText}
     }
   });
 
-  // Nút Về trang chủ (đóng Thank You)
   backHomeBtn.addEventListener('click', () => {
     thankYouScreen.classList.remove('modal-enter');
     thankYouScreen.classList.add('modal-leave');
     setTimeout(() => {
       thankYouScreen.classList.add('hidden');
       thankYouScreen.classList.remove('flex', 'modal-leave');
-    }, 300); // 300ms
+    }, 300); 
   });
 }
 
