@@ -414,7 +414,6 @@ function renderCart() {
         </div>
       </div>
       
-      <!-- Cụm nút bấm (+ / -) -->
       <div class="flex items-center gap-3 bg-gray-50 border border-gray-200 rounded-full px-2 py-1 shrink-0">
         <button onclick="changeQty('${item.optionId}', -1)" class="w-6 h-6 flex items-center justify-center text-gray-500 hover:text-spa-gold hover:bg-white rounded-full transition-colors"><i class="fa-solid fa-minus text-xs"></i></button>
         <span class="text-sm font-bold w-4 text-center">${item.qty}</span>
@@ -510,7 +509,7 @@ function setupEventListeners() {
     loadingSpinner.classList.remove('hidden');
 
     try {
-      const response = await fetch('send-orders.php', {
+      const response = await fetch('send-order.php', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
